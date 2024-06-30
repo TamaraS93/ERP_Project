@@ -48,7 +48,6 @@
             <th>Cena</th>
             <th>Opis</th>
             <th>Slika</th>
-            <th>Kreirano:</th>
             <th>Akcija</th>
         </tr>
     </thead>
@@ -62,7 +61,6 @@
                 <td>@product.Price</td>
                 <td>@product.Description</td>
                 <td><img src="/Images/@product.ImageFileName" width="100" /></td>
-                <td>@product.CreatedAt.ToString("MM/dd/yyyy")</td>
                 <td style="white-space:nowrap">
                     @if (User.IsInRole("admin") || User.IsInRole("zaposleni"))
                     {

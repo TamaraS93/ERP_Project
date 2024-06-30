@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -19,20 +19,20 @@
       "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\employee\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\employee\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|solutionrelative:views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D23AEEAD-9325-482B-9939-1ED6B86142D6}|ERP.csproj|c:\\users\\tamar_p7pn394\\onedrive\\desktop\\erp_projekat\\erp\\views\\customers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,20 +74,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
               "ToolTip": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-30T14:41:14.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -106,14 +106,14 @@
               "RelativeDocumentMoniker": "Views\\Employee\\Index.cshtml",
               "ToolTip": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Employee\\Index.cshtml",
               "RelativeToolTip": "Views\\Employee\\Index.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABwAAAAbAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACcAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-30T14:32:59.305Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Employee\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Employee\\Edit.cshtml",
@@ -126,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Employee\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Employee\\Create.cshtml",
@@ -145,7 +145,7 @@
               "RelativeDocumentMoniker": "Views\\Customers\\Index.cshtml",
               "ToolTip": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Customers\\Index.cshtml",
               "RelativeToolTip": "Views\\Customers\\Index.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAwBIAAAAQAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAwBMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-30T14:30:52.391Z",
               "EditorCaption": ""
@@ -165,13 +165,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Cart\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Cart\\Index.cshtml",
               "ToolTip": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Cart\\Index.cshtml",
               "RelativeToolTip": "Views\\Cart\\Index.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-30T14:29:53.647Z",
               "EditorCaption": ""
@@ -191,13 +191,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\Index.cshtml",
               "ToolTip": "C:\\Users\\tamar_p7pn394\\OneDrive\\Desktop\\ERP_Projekat\\ERP\\Views\\Products\\Index.cshtml",
               "RelativeToolTip": "Views\\Products\\Index.cshtml",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAEkAAACcAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAD4AAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-30T12:36:36.772Z",
               "EditorCaption": ""
