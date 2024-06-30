@@ -20,14 +20,13 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Ime</th>
             <th>Prezime</th>
             <th>Adresa</th>
             <th>Telefon</th>
             <th>Plata</th>
-            <th>Created at</th>
-            <th>Action</th>
+            <th>Kreirano</th>
+            <th>Akcija</th>
         </tr>
     </thead>
 
@@ -35,7 +34,6 @@
         @foreach (var employee in Model)
         {
             <tr>
-                <td>@employee.Employee_ID</td>
                 <td>@employee.Employee_name</td>
                 <td>@employee.Employee_surname</td>
                 <td>@employee.Employee_address</td>
@@ -43,8 +41,8 @@
                 <td>@employee.Salary</td>
                 <td>@employee.CreatedAt.ToString("MM/dd/yyyy")</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Employee", new { Employee_ID = employee.Employee_ID })">Edit</a>
-                    <a class="btn btn-danger btn-sm" onclick="return confirm('Da  li ste sigurni?')" href="@Url.Action("Delete", "Employee", new { Employee_ID = employee.Employee_ID })">Delete</a>
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Employee", new { Employee_ID = employee.Employee_ID })">Izmeni</a>
+                    <a class="btn btn-danger btn-sm" onclick="return confirm('Da  li ste sigurni?')" href="@Url.Action("Delete", "Employee", new { Employee_ID = employee.Employee_ID })">Obriši</a>
 
                 </td>
             </tr>

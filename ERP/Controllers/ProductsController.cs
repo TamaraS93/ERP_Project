@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+
 //using System.Data;
 using System.Security.Claims;
 
@@ -22,13 +24,19 @@ namespace ERP.Controllers
             this.environment = environment;
             this.cartService = cartService;
         }
-        public IActionResult Index(string searchString, string category)
+        public IActionResult Index(string searchString, string category, string CategoryID)
         {
             var products = context.Products.AsQueryable();
 
+            Console.WriteLine(CategoryID);
             if (!string.IsNullOrEmpty(searchString))
             {
                 products = products.Where(p => p.Product_name.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(CategoryID) && CategoryID != "Izaberi..")
+            {
+                products = products.Where(p => p.Category.Equals(CategoryID));
             }
 
             ViewData["SearchString"] = searchString;
@@ -206,7 +214,7 @@ namespace ERP.Controllers
             }
         }
 
-        [Authorize(Roles = "kupac")] 
+        [Authorize(Roles = "kupac")]
         public IActionResult AddToCart(int Product_ID)
         {
             var product = context.Products.Find(Product_ID);

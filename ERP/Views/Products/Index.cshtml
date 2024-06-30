@@ -14,12 +14,27 @@
 </div>
 
 <form asp-action="Index" method="get">
-    <div>
-        <p>
-            Pronađi proizvod  <input type="text" name="searchString" value=""/>
-            <input type="submit" value="Search" class="btn btn-info" />
-            <a asp-action="Index">Ukloni pretragu</a>
-        </p>
+    <div class="row align-items-end">
+        <div class="col-md-4 mb-3">
+            <label class="visually-hidden" for="inlineFormSelectPref">Kategorije</label>
+            <select class="form-select" id="CategoryID" name="CategoryID">
+                <option selected disabled>Izaberi..</option>
+                <option value="Nega kose">Nega kose</option>
+                <option value="Nega tela">Nega tela</option>
+                <option value="Nega lica">Nega lica</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="searchString" class="visually-hidden">Pronađi proizvod</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="searchString" name="searchString" placeholder="Pronađi proizvod">
+                <button type="submit" class="btn btn-info">Search</button>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a asp-action="Index" class="btn btn-secondary">Ukloni pretragu</a>
+        </div>
     </div>
 </form>
 
@@ -27,22 +42,20 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Naziv</th>
             <th>Kategorija</th>
             <th>Brend</th>
             <th>Cena</th>
             <th>Opis</th>
             <th>Slika</th>
-            <th>Created at</th>
-            <th>Action</th>
+            <th>Kreirano:</th>
+            <th>Akcija</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var product in Model)
         {
             <tr>
-                <td>@product.Product_ID</td>
                 <td>@product.Product_name</td>
                 <td>@product.Category</td>
                 <td>@product.Brand</td>
@@ -53,12 +66,12 @@
                 <td style="white-space:nowrap">
                     @if (User.IsInRole("admin") || User.IsInRole("zaposleni"))
                     {
-                        <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Products", new { Product_ID = product.Product_ID })">Edit</a>
-                        <a class="btn btn-danger btn-sm" onclick="return confirm('Da  li ste sigurni?')" href="@Url.Action("Delete", "Products", new { Product_ID = product.Product_ID })">Delete</a>
+                        <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Products", new { Product_ID = product.Product_ID })">Izmeni</a>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Da  li ste sigurni?')" href="@Url.Action("Delete", "Products", new { Product_ID = product.Product_ID })">Obriši</a>
                     }
                     @if (User.IsInRole("kupac"))
                     {
-                        <a class="btn btn-success btn-sm" href="@Url.Action("AddToCart", "Products", new { Product_ID = product.Product_ID })">Add to Cart</a>
+                        <a class="btn btn-success btn-sm" href="@Url.Action("AddToCart", "Products", new { Product_ID = product.Product_ID })">Dodaj u korpu</a>
                     }
                 </td>
             </tr>

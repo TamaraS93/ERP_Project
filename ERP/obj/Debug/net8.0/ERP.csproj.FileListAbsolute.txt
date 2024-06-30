@@ -285,3 +285,4 @@ C:\Users\tamar_p7pn394\OneDrive\Desktop\ERP_Projekat\ERP\obj\Debug\net8.0\ERP.pd
 C:\Users\tamar_p7pn394\OneDrive\Desktop\ERP_Projekat\ERP\obj\Debug\net8.0\ERP.genruntimeconfig.cache
 C:\Users\tamar_p7pn394\OneDrive\Desktop\ERP_Projekat\ERP\obj\Debug\net8.0\ref\ERP.dll
 C:\Users\tamar_p7pn394\OneDrive\Desktop\ERP_Projekat\ERP\bin\Debug\net8.0\Stripe.net.dll
+C:\Users\tamar_p7pn394\OneDrive\Desktop\ERP_Projekat\ERP\obj\Debug\net8.0\ERP.sourcelink.json

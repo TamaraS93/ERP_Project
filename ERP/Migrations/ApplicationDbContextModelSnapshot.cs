@@ -203,8 +203,7 @@ namespace ERP.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Salary")
-                        .HasPrecision(16, 2)
-                        .HasColumnType("decimal(16,2)");
+                        .HasColumnType("decimal(16, 2)");
 
                     b.HasKey("Employee_ID");
 
@@ -414,19 +413,19 @@ namespace ERP.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "32371c79-1d7e-4761-811e-940e60a5d6ed",
+                            Id = "4249524d-70de-4d86-81e4-25e2990c9b4a",
                             Name = "admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "55f1c1da-702a-4b34-a350-eec9fa8b8640",
+                            Id = "845acc99-4fb1-4eaa-85c6-07d139e49db0",
                             Name = "zaposleni",
                             NormalizedName = "zaposleni"
                         },
                         new
                         {
-                            Id = "932be064-92b2-4f9e-901d-ac8e4a06914f",
+                            Id = "2febde7c-5cc0-4732-a35f-3b4e53adaa22",
                             Name = "kupac",
                             NormalizedName = "kupac"
                         });
