@@ -1,0 +1,93 @@
+﻿@model List<Product>
+@{
+}
+
+<h2 class="text-center mb-5">Lista proizvoda</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        @if (User.IsInRole("admin") || User.IsInRole("zaposleni"))
+        {
+            <a class="btn btn-primary" asp-controller="Products" asp-action="Create">Novi proizvod</a>
+        }
+    </div>
+</div>
+
+<form asp-action="Index" method="get">
+    <div>
+        <p>
+            Pronađi proizvod  <input type="text" name="searchString" value=""/>
+            <input type="submit" value="Search" class="btn btn-info" />
+            <a asp-action="Index">Ukloni pretragu</a>
+        </p>
+    </div>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Naziv</th>
+            <th>Kategorija</th>
+            <th>Brend</th>
+            <th>Cena</th>
+            <th>Opis</th>
+            <th>Slika</th>
+            <th>Created at</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Product_ID</td>
+                <td>@product.Product_name</td>
+                <td>@product.Category</td>
+                <td>@product.Brand</td>
+                <td>@product.Price</td>
+                <td>@product.Description</td>
+                <td><img src="/Images/@product.ImageFileName" width="100" /></td>
+                <td>@product.CreatedAt.ToString("MM/dd/yyyy")</td>
+                <td style="white-space:nowrap">
+                    @if (User.IsInRole("admin") || User.IsInRole("zaposleni"))
+                    {
+                        <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Products", new { Product_ID = product.Product_ID })">Edit</a>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Da  li ste sigurni?')" href="@Url.Action("Delete", "Products", new { Product_ID = product.Product_ID })">Delete</a>
+                    }
+                    @if (User.IsInRole("kupac"))
+                    {
+                        <a class="btn btn-success btn-sm" href="@Url.Action("AddToCart", "Products", new { Product_ID = product.Product_ID })">Add to Cart</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.add-to-cart-btn').click(function () {
+                var productId = $(this).data('product-id');
+
+                $.ajax({
+                    url: '@Url.Action("AddToCartPost", "Products")',
+                    type: 'POST',
+                    data: { Product_ID: productId },
+                    success: function (response) {
+                        alert('Proizvod uspešno dodat u korpu!');
+                    },
+                    error: function (xhr, status, error) {
+                        var errorMessage = 'Error adding product to cart.';
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMessage += ' Product ID: ' + xhr.responseJSON.message;
+                        }
+                        alert(errorMessage);
+                    }
+                });
+            });
+        });
+    </script>
+}

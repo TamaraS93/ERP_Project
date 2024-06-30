@@ -1,0 +1,21 @@
+﻿@page
+@model ERP.Models.TransactionViewModel
+@{
+    ViewData["Title"] = "Uspešna kupovina";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Plaćanje je uspešno izvršeno</h2>
+            <p>Detalji transakcije:</p>
+            <ul>
+                <li>Broj transakcije: @Model.TransactionId</li>
+                <li>Datum transakcije: @Model.TransactionDate.ToString("dd.MM.yyyy HH:mm:ss")</li>
+                <li>Ukupan iznos: @Model.TransactionAmount.ToString("C", new System.Globalization.CultureInfo("sr-RS"))</li>
+            </ul>
+            <p><a class="btn btn-primary" href="/Products">Povratak na listu proizvoda</a></p>
+        </div>
+    </div>
+</div>

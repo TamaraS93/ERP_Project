@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ERP.Models.Transaction>
+
+<h1>Transakcije</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Proizvod</th>
+            <th>Količina</th>
+            <th>Cena</th>
+            <th>Email Kupca</th>
+            <th>Datum Transakcije</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model)
+        {
+            <tr>
+                <td>@transaction.ProductName</td>
+                <td>@transaction.Quantity</td>
+                <td>@transaction.Price</td>
+                <td>@transaction.CustomerEmail</td>
+                <td>@transaction.TransactionDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

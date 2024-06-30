@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ApplicationUser>
+
+<h1>Lista kupaca</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Ime kupca</th>
+            <th>Prezime kupca</th>
+            <th>Telefon kupca</th>
+            <th>Adresa kupca</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Email</td>
+                <td>@customer.FirstName</td>
+                <td>@customer.LastName</td>
+                <td>@customer.PhoneNumber</td>
+                <td>@customer.Address</td>
+                <td>
+                <td style="white-space:nowrap">
+                    @if (User.IsInRole("admin") || User.IsInRole("zaposleni"))
+                    {
+                        <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Customers")?id=@customer.Id">Edit</a>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Da  li ste sigurni?')" href="@Url.Action("Delete", "Customers", new { Id = customer.Id })">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

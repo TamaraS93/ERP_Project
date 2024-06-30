@@ -1,0 +1,62 @@
+﻿@model ERP.Models.CartViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaša korpa</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+    <h1>Vaša korpa</h1>
+
+    <div>
+        <h3>Proizvodi u korpi</h3>
+        <button type="button" class="btn btn-danger" onclick="clearCart()">Isprazni korpu</button>
+        <table class="table" id="cart-table">
+            <thead>
+                <tr>
+                    <th>Proizvod</th>
+                    <th>Količina</th>
+                    <th>Cena</th>
+                    <th>Ukupno</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CartItems)
+                {
+                    <tr data-product-id="@item.ProductId">
+                        <td>@item.ProductName</td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary" onclick="updateQuantity('@item.ProductId', 'increase')">+</button>
+                            @item.Quantity
+                            <button class="btn btn-sm btn-secondary" onclick="updateQuantity('@item.ProductId', 'decrease')">-</button>
+                        </td>
+                        <td>@item.Price</td>
+                        <td>@(item.Quantity * item.Price)</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger" onclick="removeFromCart('@item.ProductId')">Ukloni</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div id="cart-total">
+            <h4>Total: @Model.CartTotal.ToString("C0", new System.Globalization.CultureInfo("sr-RS"))</h4>
+        </div>
+
+        <form method="post" action="@Url.Action("Create", "Checkout")">
+            <input type="hidden" name="cartTotal" value="@Model.CartTotal" />
+            <button type="submit" class="btn btn-primary float-right">Nastavite na plaćanje</button>
+        </form>
+    </div>
+    <script src="~/js/cart.js"></script>
+</body>
+</html>
