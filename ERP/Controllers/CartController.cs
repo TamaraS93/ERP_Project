@@ -63,11 +63,11 @@ public class CartController : Controller
     [HttpPost]
     public IActionResult ClearCart()
     {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
         _cartService.ClearCart(userId);
 
-        return Ok(); 
+        return Ok();
     }
 
     [HttpPost]

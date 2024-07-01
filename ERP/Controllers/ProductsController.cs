@@ -1,13 +1,7 @@
 ﻿using ERP.Models;
 using ERP.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-
-//using System.Data;
 using System.Security.Claims;
 
 namespace ERP.Controllers

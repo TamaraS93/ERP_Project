@@ -1,33 +1,44 @@
-﻿@model IEnumerable<ApplicationUser>
+﻿@model List<Customer>
+@{
+}
 
-<h1>Lista kupaca</h1>
+
+<h2 class="text-center mb-5">Lista kupaca</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        @if (User.IsInRole("admin") || (User.IsInRole("zaposleni")))
+        {
+            <a class="btn btn-primary" asp-controller="Customers" asp-action="Create">Novi kupac</a>
+        }
+    </div>
+    <div class="col">
+    </div>
+</div>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Email</th>
-            <th>Ime kupca</th>
-            <th>Prezime kupca</th>
-            <th>Telefon kupca</th>
-            <th>Adresa kupca</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Adresa</th>
+            <th>Telefon</th>
             <th>Akcija</th>
         </tr>
     </thead>
+
     <tbody>
         @foreach (var customer in Model)
         {
             <tr>
-                <td>@customer.Email</td>
-                <td>@customer.FirstName</td>
-                <td>@customer.LastName</td>
-                <td>@customer.PhoneNumber</td>
-                <td>@customer.Address</td>
+                <td>@customer.Customer_Name</td>
+                <td>@customer.Customer_LastName</td>
+                <td>@customer.Customer_address</td>
+                <td>@customer.Customer_phone</td>
                 <td style="white-space:nowrap">
-                    @if (User.IsInRole("admin") || User.IsInRole("zaposleni"))
-                    {
-                        <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Customers")?id=@customer.Id">Izmeni</a>
-                        <a class="btn btn-danger btn-sm" onclick="return confirm('Da  li ste sigurni?')" href="@Url.Action("Delete", "Customers", new { Id = customer.Id })">Obriši</a>
-                    }
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", "Customers", new { Customer_ID = customer.Customer_ID })">Izmeni</a>
+                    <a class="btn btn-danger btn-sm" onclick="return confirm('Da  li ste sigurni?')" href="@Url.Action("Delete", "Customers", new { Customer_ID = customer.Customer_ID })">Obriši</a>
+
                 </td>
             </tr>
         }

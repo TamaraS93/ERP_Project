@@ -36,8 +36,6 @@ public class WebhookController : ControllerBase
             {
                 var session = stripeEvent.Data.Object as Session;
                 var customerEmail = session.CustomerDetails.Email;
-                // var lineItems = session.DisplayItems;
-                // var amountTotal = session.AmountTotal;
                 var service = new SessionService();
                 var sessionLineItems = service.ListLineItems(session.Id);
 

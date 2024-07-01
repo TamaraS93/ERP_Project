@@ -7,9 +7,9 @@ namespace ERP.Models
     public class Order
     {
         [Key]
-        public int Order_ID {get; set;}
+        public int Order_ID { get; set; }
         [Required]
-        public int User_ID {get; set;}
+        public int User_ID { get; set; }
         [Required]
         public DateTime CreateDate { get; set; } = DateTime.UtcNow;
         [Required]

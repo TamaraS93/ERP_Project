@@ -1,4 +1,5 @@
-﻿namespace ERP.Models
+﻿
+namespace ERP.Models
 {
     public class CartViewModel
     {

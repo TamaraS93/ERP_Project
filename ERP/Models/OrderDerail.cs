@@ -11,7 +11,7 @@ namespace ERP.Models
         [Required]
         public int Order_ID { get; set; }
         [Required]
-        public int Product_ID {  get; set; }
+        public int Product_ID { get; set; }
         [Required]
         public int Quantity { get; set; }
         [Required]

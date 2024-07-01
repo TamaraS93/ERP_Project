@@ -1,21 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using ERP.Models;
 using Microsoft.AspNetCore.Authorization;
-using System.Linq;
-using System.Threading.Tasks;
 using ERP.Services;
 
 namespace ERP.Controllers
 {
 
-        
-
-
-
-
-        [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
 
     public class EmployeeController : Controller
     {

@@ -1,64 +1,59 @@
-﻿@model ApplicationUser
+﻿@model CustomerDto
 @{
 }
 
 <div class="row">
     <div class="col-md-8 mx-auto rounded border p-3">
         <h2 class="text-center mb-5">Izmeni informacije o kupcu</h2>
-        <form method="post" asp-action="Edit">
-            <input type="hidden" asp-for="Id" />
+
+
+        <form method="post" enctype="multipart/form-data">
 
             <div class="row mb-3">
                 <label class="col-sm-4 col-form-label">ID</label>
                 <div class="col-sm-8">
-                    <input class="form-control-plaintext" readonly asp-for="Id">
+                    <input class="form-control-plaintext" readonly value="@ViewData["Customer_ID"]">
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Ime</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Customer_name">
+                    <span asp-validation-for="Customer_name" class="text-danger"></span>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Ime kupca</label>
+                <label class="col-sm-4 col-form-label">Prezime</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="FirstName">
-                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                    <input class="form-control" asp-for="Customer_LastName">
+                    <span asp-validation-for="Customer_LastName" class="text-danger"></span>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Prezime kupca</label>
+                <label class="col-sm-4 col-form-label">Adresa</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="LastName">
-                    <span asp-validation-for="LastName" class="text-danger"></span>
+                    <input class="form-control" asp-for="Customer_address">
+                    <span asp-validation-for="Customer_address" class="text-danger"></span>
                 </div>
             </div>
 
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Email</label>
-                <div class="col-sm-8">
-                    <input class="form-control" asp-for="Email" readonly>
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-            </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Telefon kupca</label>
+                <label class="col-sm-4 col-form-label">Telefon</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="PhoneNumber">
-                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Adresa kupca</label>
-                <div class="col-sm-8">
-                    <input class="form-control" asp-for="Address">
-                    <span asp-validation-for="Address" class="text-danger"></span>
+                    <input class="form-control" asp-for="Customer_phone">
+                    <span asp-validation-for="Customer_phone" class="text-danger"></span>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label class="col-sm-4 col-form-label">Kreirano:</label>
                 <div class="col-sm-8">
-                    <input class="form-control-plaintext" readonly asp-for="CreatedAt">
+                    <input class="form-control-plaintext" readonly value="@ViewData["CreatedAt"]">
                 </div>
             </div>
 
@@ -67,9 +62,11 @@
                     <button type="submit" class="btn btn-primary">Sačuvaj</button>
                 </div>
                 <div class="col-sm-4 d-grid">
-                    <a class="btn btn-outline-primary" asp-controller="Customers" asp-action="Index" role="button">Odustani</a>
+                    <a class="btn btn-outline-primary" asp-controller="Customers" asp-action="Index" role="button">
+                        Odustani
+                    </a>
                 </div>
             </div>
         </form>
-      </div>
+    </div>
 </div>

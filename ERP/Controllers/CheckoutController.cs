@@ -1,12 +1,8 @@
 ﻿using ERP.Models;
 using ERP.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-//using Microsoft.Extensions.Options;
-//using ERP.Models;
 using Stripe.Checkout;
-//using Stripe;
+using System.Security.Claims;
 
 [Route("create-checkout-session")]
 [ApiController]
@@ -14,16 +10,19 @@ using Stripe.Checkout;
 public class CheckoutController : Controller
 {
     private readonly ApplicationDbContext _context;
+    private readonly ICartService _cartService;
 
-    public CheckoutController(ApplicationDbContext context)
+    public CheckoutController(ApplicationDbContext context, ICartService cartService)
     {
         _context = context;
+        _cartService = cartService;
     }
 
     [HttpPost]
-    public ActionResult Create(decimal cartTotal)
+    public async Task<ActionResult> Create(decimal cartTotal)
     {
         var domain = "http://localhost:7133";
+
 
         var options = new SessionCreateOptions
         {
@@ -45,6 +44,22 @@ public class CheckoutController : Controller
             CancelUrl = "https://localhost:7133/Products/Index",
         };
         var service = new SessionService();
+
+        var transaction = new Transaction
+        {
+            ProductName = "Rich Nourishing mleko za telo , za suvu kožu", 
+            Quantity = 1, 
+            Price = 5,
+            CustomerEmail = "test.test@example.com", 
+            TransactionDate = DateTime.Now 
+        };
+
+        _context.Transactions.Add(transaction);
+        await _context.SaveChangesAsync();
+
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        _cartService.ClearCart(userId);
+
         Session session = service.Create(options);
 
         Response.Headers.Add("Location", session.Url);

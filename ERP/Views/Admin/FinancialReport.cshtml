@@ -1,0 +1,33 @@
+﻿@model ERP.Models.FinancialReportViewModel
+
+<h2>Finansijski izveštaj</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Proizvod</th>
+            <th>Količina</th>
+            <th>Cena</th>
+            <th>Email korisnika</th>
+            <th>Datum transakcije</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model.Transactions)
+        {
+            <tr>
+                <td>@transaction.ProductName</td>
+                <td>@transaction.Quantity</td>
+                <td>@transaction.Price.ToString("C")</td>
+                <td>@transaction.CustomerEmail</td>
+                <td>@transaction.TransactionDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3"><strong>Total:</strong></td>
+            <td colspan="3">@Model.TotalSum.ToString("C")</td>
+        </tr>
+    </tfoot>
+</table>

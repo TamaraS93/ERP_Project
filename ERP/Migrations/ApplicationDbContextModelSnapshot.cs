@@ -155,7 +155,7 @@ namespace ERP.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ShoppingCartId")
+                    b.Property<int>("ShoppingCartId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -168,7 +168,43 @@ namespace ERP.Migrations
 
                     b.HasIndex("ShoppingCartId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItem");
+                });
+
+            modelBuilder.Entity("ERP.Models.Customer", b =>
+                {
+                    b.Property<int>("Customer_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Customer_ID"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Customer_LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Customer_Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Customer_address")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Customer_phone")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Customer_ID");
+
+                    b.ToTable("Customer");
                 });
 
             modelBuilder.Entity("ERP.Models.Employee", b =>
@@ -413,21 +449,21 @@ namespace ERP.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "4249524d-70de-4d86-81e4-25e2990c9b4a",
+                            Id = "fdd114cb-d84f-4226-b6f2-ddc363ad1825",
                             Name = "admin",
-                            NormalizedName = "admin"
+                            NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "845acc99-4fb1-4eaa-85c6-07d139e49db0",
+                            Id = "3baf727d-aae5-42a9-ac0e-ccf7e9b32662",
                             Name = "zaposleni",
-                            NormalizedName = "zaposleni"
+                            NormalizedName = "ZAPOSLENI"
                         },
                         new
                         {
-                            Id = "2febde7c-5cc0-4732-a35f-3b4e53adaa22",
+                            Id = "83b2acc8-4511-4863-a8ca-bc543831fb8a",
                             Name = "kupac",
-                            NormalizedName = "kupac"
+                            NormalizedName = "KUPAC"
                         });
                 });
 
@@ -568,11 +604,15 @@ namespace ERP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ERP.Models.ShoppingCart", null)
+                    b.HasOne("ERP.Models.ShoppingCart", "ShoppingCart")
                         .WithMany("CartItems")
-                        .HasForeignKey("ShoppingCartId");
+                        .HasForeignKey("ShoppingCartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Product");
+
+                    b.Navigation("ShoppingCart");
                 });
 
             modelBuilder.Entity("ERP.Models.Order", b =>

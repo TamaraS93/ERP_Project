@@ -1,0 +1,58 @@
+﻿@model CustomerDto
+@{
+}
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-3">
+        <h2 class="text-center mb-5">Novi kupac</h2>
+
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Ime</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Customer_name">
+                    <span asp-validation-for="Customer_name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Prezime</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Customer_LastName">
+                    <span asp-validation-for="Customer_LastName" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Adresa</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Customer_address">
+                    <span asp-validation-for="Customer_address" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Telefon</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Customer_phone">
+                    <span asp-validation-for="Customer_phone" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Sačuvaj</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" asp-controller="Customers" asp-action="Index" role="button">
+                        Odustani
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

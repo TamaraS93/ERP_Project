@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ERP.Models;
+﻿using ERP.Models;
 
 namespace ERP.Services
 {

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using ERP.Models;
 using ERP.Services;
 
@@ -12,9 +11,18 @@ public class AdminController : Controller
         _context = context;
     }
 
-    public IActionResult Transactions()
+    public IActionResult FinancialReport()
     {
         var transactions = _context.Transactions.ToList();
-        return View(transactions);
+
+        decimal totalSum = transactions.Sum(t => t.Price);
+
+        var viewModel = new FinancialReportViewModel
+        {
+            Transactions = transactions,
+            TotalSum = totalSum
+        };
+
+        return View(viewModel);
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ERP.Migrations
 {
     /// <inheritdoc />
-    public partial class NewMiration : Migration
+    public partial class NewMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -305,7 +305,7 @@ namespace ERP.Migrations
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ShoppingCartId = table.Column<int>(type: "int", nullable: true)
+                    ShoppingCartId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -320,7 +320,8 @@ namespace ERP.Migrations
                         name: "FK_CartItems_ShoppingCart_ShoppingCartId",
                         column: x => x.ShoppingCartId,
                         principalTable: "ShoppingCart",
-                        principalColumn: "ShoppingCartId");
+                        principalColumn: "ShoppingCartId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -358,9 +359,9 @@ namespace ERP.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "2febde7c-5cc0-4732-a35f-3b4e53adaa22", null, "kupac", "kupac" },
-                    { "4249524d-70de-4d86-81e4-25e2990c9b4a", null, "admin", "admin" },
-                    { "845acc99-4fb1-4eaa-85c6-07d139e49db0", null, "zaposleni", "zaposleni" }
+                    { "37517885-5679-4cc6-b2a2-446d5f9ae437", null, "zaposleni", "ZAPOSLENI" },
+                    { "3efef02f-7481-4789-b63c-c2e113749c6f", null, "kupac", "KUPAC" },
+                    { "b9009022-f61f-45de-a798-28f40da73e34", null, "admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(
